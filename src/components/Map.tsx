@@ -3,7 +3,7 @@ import { Routes } from "./Routes";
 import { StateContext } from "StateContext";
 
 export function Map() {
-  const { steps, map, generateMap } = useContext(StateContext);
+  const { map, generateMap } = useContext(StateContext);
 
   const [selectedRoute, setSelectedRoute] = useState<number[]>([]);
 
