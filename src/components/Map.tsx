@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { Routes } from "./Routes";
 import { StateContext } from "StateContext";
 
@@ -15,6 +15,10 @@ export function Map() {
     setSelectedRoute([]);
     generateMap();
   }
+
+  useEffect(() => {
+    setSelectedRoute([]);
+  }, [map]);
 
   return (
     <div className="map-wrapper">

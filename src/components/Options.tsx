@@ -45,6 +45,16 @@ export function Options() {
           Generate new map 🗺️
         </button>
       </div>
+      <div className="option">
+        <a
+          className="option-button github"
+          href="https://github.com/hiugo/map-generator"
+          rel="noreferrer"
+          target="_blank"
+        >
+          Github
+        </a>
+      </div>
     </div>
   );
 }

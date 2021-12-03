@@ -1,3 +1,11 @@
+:root {
+  --primary: hotpink;
+  --primary-hover: pink;
+  --secondary: lavender;
+  --white: white;
+  --black: darkslategrey;
+}
+
 html,
 body,
 #root {
@@ -18,6 +26,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: var(--black);
 }
 
 button,
@@ -84,23 +93,31 @@ input[type="number"] {
   min-width: 36px;
   height: 36px;
   border-radius: 3px;
-  background-color: hotpink;
-  color: white;
-  padding: 0 12px;
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 0 12px 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .option-button:hover {
-  background-color: pink;
+  background-color: var(--primary-hover);
 }
 
 .option-button:disabled {
-  background-color: lavender;
+  background-color: var(--secondary);
   cursor: default;
+}
+
+.option-button.github {
+  text-decoration: none;
+  background-color: var(--black);
 }
 
 .option-input {
   height: 36px;
-  border: 2px solid lavender;
+  border: 2px solid var(--secondary);
   border-radius: 3px;
   width: 100px;
   text-align: center;
@@ -108,7 +125,7 @@ input[type="number"] {
 
 .option-input:active,
 .option-input:focus {
-  border-color: hotpink;
+  border-color: var(--primary);
 }
 
 /* MAP */
@@ -128,18 +145,18 @@ input[type="number"] {
 button.room {
   width: 60px;
   height: 60px;
-  border: 4px solid hotpink;
+  border: 4px solid var(--primary);
   border-radius: 3px;
 }
 
 button.room:disabled {
   cursor: default;
-  border-color: lavender;
+  border-color: var(--secondary);
 }
 
 button.room.selected {
-  background-color: hotpink;
-  border-color: hotpink;
+  background-color: var(--primary);
+  border-color: var(--primary);
 }
 
 .routes {
@@ -162,15 +179,15 @@ svg.route-svg.back {
 
 line.route-line {
   stroke-width: 5px;
-  stroke: darkslategrey;
+  stroke: var(--black);
   stroke-linecap: square;
   position: relative;
 }
 
 line.route-line.disabled {
-  stroke: lavender;
+  stroke: var(--secondary);
 }
 
 line.route-line.selected {
-  stroke: hotpink;
+  stroke: var(--primary);
 }
