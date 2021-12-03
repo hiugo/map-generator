@@ -1,13 +1,176 @@
+html,
+body,
+#root {
+  height: 100%;
+  min-height: 100%;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+button,
+input {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  outline: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.app {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* OPTIONS */
+
+.options-wrapper {
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: 36px;
+  padding: 24px;
+}
+
+.option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.option-content {
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: 8px;
+}
+
+.option-title {
+  margin-bottom: 16px;
+  font-weight: 700;
+}
+
+.option-button {
+  min-width: 36px;
+  height: 36px;
+  border-radius: 3px;
+  background-color: hotpink;
+  color: white;
+  padding: 0 12px;
+}
+
+.option-button:hover {
+  background-color: pink;
+}
+
+.option-button:disabled {
+  background-color: lavender;
+  cursor: default;
+}
+
+.option-input {
+  height: 36px;
+  border: 2px solid lavender;
+  border-radius: 3px;
+  width: 100px;
+  text-align: center;
+}
+
+.option-input:active,
+.option-input:focus {
+  border-color: hotpink;
+}
+
+/* MAP */
+
+.map-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.step {
+  display: grid;
+  grid-gap: 16px;
+}
+
+button.room {
+  width: 60px;
+  height: 60px;
+  border: 4px solid hotpink;
+  border-radius: 3px;
+}
+
+button.room:disabled {
+  cursor: default;
+  border-color: lavender;
+}
+
+button.room.selected {
+  background-color: hotpink;
+  border-color: hotpink;
+}
+
+.routes {
+  height: 100%;
+  width: 100px;
+  position: relative;
+}
+
+svg.route-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+svg.route-svg.back {
+  z-index: -1;
+}
+
+line.route-line {
+  stroke-width: 5px;
+  stroke: darkslategrey;
+  stroke-linecap: square;
+  position: relative;
+}
+
+line.route-line.disabled {
+  stroke: lavender;
+}
+
+line.route-line.selected {
+  stroke: hotpink;
 }
